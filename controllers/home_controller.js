@@ -1,7 +1,7 @@
 module.exports.home = function(req,res){     // giving a name to the controller for '/' as home as module.exports is an object 
     
     console.log(req.cookies);
-    res.cookie('user_id',25);
+    res.cookie('user_id',25); //defining value if cookie manually created
 
     return res.render('home',{
         title : "home"
