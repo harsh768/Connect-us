@@ -1,40 +1,15 @@
 
 <link rel="stylesheet" href="/css/home.css">
 
-<h1>Harsh's Page</h1>
+<h1>Harsh's Page <%= title %> </h1>
 
-<form action="">
-
-    <div id="heading" class="box-items">TODO APP</div>
-    
-    <div class="box-items">
-        <span class="section-element">Description</span>
-        <input type="text" name="description" placeholder="what do you need to do?" class="section-element">
-    </div>
-
-    <div class="box-items">
-
-        <div class="category-div">
-            <div class="section-element">Category</div>
-            <select id="category" name="category" class="section-element">
-                <option value="Personal">Personal</option>
-                <option value="Work">Work</option>
-                <option value="Schooling">Schooling</option>
-                <option value="Cleaning">Cleaning</option>
-            </select>
-        </div>
-
-        <div class="date-div">
-            <div class="section-element">Due date</div>
-            <input type="date" id="start" name="trip-start"
-            value="2018-07-22"
-            min="2020-01-01" max="2030s-12-31">
-        </div>
-
-    </div>
-
-
-
-</form>
+<a href="/users/sign-up">
+    <button type="submit">Signup</button>
+</a>
+<div>
+    <a href="/users/sign-in">
+        <button type="submit">Signin</button>
+    </a>
+</div>
 
 <script type="text/javascript" src="/js/home.js"></script>
