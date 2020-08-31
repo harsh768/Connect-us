@@ -6,7 +6,8 @@
 
     <% if (locals.user){ %>
         <div>
-            <a href="/users/profile"> <%= locals.user.name %></a>
+            <a href="/users/profile/<%= user.id %>"> <%= user.name %></a>
+            <!-- here in header there is link to profile page and it is being accessed but in footer it is showing error ?? -->
             &nbsp
             <a href="/users/sign-out">Sign Out</a>
         </div>

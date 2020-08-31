@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function(req,res){     // giving a name to the controller for '/' as home as module.exports is an object 
     // console.log(req.cookies);
@@ -23,11 +24,16 @@ module.exports.home = function(req,res){     // giving a name to the controller 
     })
     .exec(function(err,posts)
     {
-        if(err) {console.log('error rendering posts',err); return; }
-        return res.render('home',{
-            title : "Codeial | home",
-            posts : posts
-        });
+        User.find({},function(err,users)
+        {
+            if(err) {console.log('error rendering posts',err); return; }
+            return res.render('home',{
+                title : "Codeial | Home",
+                posts : posts,
+                all_users : users
+            });
+        })
+
     })
 
 
