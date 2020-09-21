@@ -1,10 +1,11 @@
 footer{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
-    height: 8vh;
-    font-size: 1.2rem;
-    padding: 0 1%;
+    margin-top: auto;
+    height: 10%;
+    font-size: 1.5rem;
+    padding: 0 2%;
     color: white;
     background-color: gray;
     font-weight: bolder;
@@ -12,6 +13,8 @@ footer{
     .footer-2nd-div{
         display: flex;
         flex-direction: column;
+        padding: 1%;
+        font-size: 3vh;
         margin-left: 5%;
 
         a{

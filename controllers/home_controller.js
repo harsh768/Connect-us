@@ -1,17 +1,40 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
+//using async await
+module.exports.home = async function(req,res){
+
+    try{
+        let posts = await Post.find({})
+        .sort('-createdAt')
+        .populate('user')
+        .populate({
+            path : 'comments', 
+            populate : {
+                path : 'user'
+            }
+        });
+    
+        let users = await User.find({});
+
+        req.flash('success' , 'Home Page');
+        return res.render('home',{
+            title : "Codeial | Home",
+            posts : posts,
+            all_users : users
+        });
+        
+    }catch(err){
+        console.log('Error',err);
+    }
+
+    
+}
+
+//using normal callback functions
 module.exports.home = function(req,res){     // giving a name to the controller for '/' as home as module.exports is an object 
     // console.log(req.cookies);
     // res.cookie('user_id',25);
-
-    // Post.find({}, function(err,posts)
-    // {
-    //     return res.render('home',{
-    //         title : "Codeial | home",
-    //         posts : posts
-    //     });
-    // })
 
     //Populating the user of each post
     Post.find({})
@@ -40,3 +63,10 @@ module.exports.home = function(req,res){     // giving a name to the controller 
 }
 
 //format = module.exports.address_name = function(req,res){}
+
+
+/*using then
+Post.find({}).populate('comments').then(function());
+let posts = Post.find.populate('comments').exec();
+post.then();   // Then represents the execution of the query written before it (Refer Promises)
+*/

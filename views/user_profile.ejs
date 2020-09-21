@@ -2,14 +2,18 @@
     Codeial | <%= profile_user.name %>
 </h1>
 
+<img src="<%=user.avatar %>" alt="Avatar image" width="100">
+
 
 <!-- we have stored info of users in res.local so we can access them now -->    
 <% if(user.id == profile_user.id) { %> 
     <!-- if user matches show the form -->
 
-    <form action="/users/update/<%=profile_user.id %>" method="POST">
+    <form action="/users/update/<%=profile_user.id %>" enctype="multipart/form-data" method="POST">
         <input type="text" name="name"  placeholder="Your name" value="<%= profile_user.name %>" required>
         <input type="email" name="email"  placeholder="Your email" value="<%= profile_user.email %>" required >
+
+        <input type="file" name="avatar" placeholder="profile picture">
         <input type="submit" value="update">
     </form>
 
