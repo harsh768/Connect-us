@@ -4,6 +4,8 @@ const app=express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db= require('./config/mongoose');
+const redis=require("redis")
+console.log(redis)
 
 //used for session cookie
 const session = require('express-session');
@@ -49,7 +51,7 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-
+//Views
 app.set('view engine','ejs');
 app.set('views','./views');
 
