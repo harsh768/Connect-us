@@ -1,6 +1,8 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer = require('../mailers/comments_mailers');
+const queue = require('../config/kue');
+const commentEmailWorker = require('../workers/comment_email_worker');
 
 module.exports.create = async function(req,res)
 {
@@ -23,7 +25,12 @@ module.exports.create = async function(req,res)
             comment = await comment.populate('user', 'name email').execPopulate();
             //write line 21 and 22 out for nodemailer to prepopulate user even if req is not xhr and also populate email 
 
-            commentsMailer.newComment(comment);
+            // commentsMailer.newComment(comment);   // Not include when created kue
+            let job = queue.create('emails',comment).save(function(err){
+
+                if (err){console.log('Error creating a que'); return; }
+                console.log('********job enqueued',job.id);
+            });
 
             if (req.xhr){
     
