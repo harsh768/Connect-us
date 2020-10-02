@@ -13,5 +13,6 @@ router.use('/comments',require('./comments'));
 router.use('/harsh',require('./harsh_routers'));
 
 router.use('/api',require('./api'));
+router.use('/likes',require('./likes'));
 
 module.exports = router; 
