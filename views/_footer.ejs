@@ -1,24 +1,26 @@
-<footer>
+<footer id="layout-footer">
+    <div>
+        <p>
+            &#169; Developer - Harsh Gupta
+        </p>
+    </div>
 
     <div>
-        @ Harsh's Codeial. All rights reserved 
+        <nav class="footer-nav">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <% if (locals.user){ %>
+                        <a href="/users/profile/<%= user.id %>"> Profile</a>
+                
+                    <% }else{ %>
+                        <a href="/users/sign-in">Profile</a>
+                    <% } %>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <div class="footer-2nd-div">
-        <div>
-            <a href="/">Home</a>
-        </div>
-
-        <div>
-            <% if (locals.user){ %>
-                <a href="/users/profile/<%= user.id %>"> Profile</a>
-        
-            <% }else{ %>
-                <a href="/users/sign-in">Profile</a>
-            <% } %>
-        
-        </div>
-    </div>
-
 </footer>
 
