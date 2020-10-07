@@ -5,7 +5,6 @@ const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db= require('./config/mongoose');
 const redis=require("redis")
-console.log(redis)
 
 //used for session cookie
 const session = require('express-session');
