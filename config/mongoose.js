@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //connect to database
-mongoose.connect('mongodb://localhost/contacts_development', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/codeial', {useNewUrlParser: true});
 
 //acquire the connection to check if running
 const db = mongoose.connection;
