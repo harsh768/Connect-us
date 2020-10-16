@@ -2,34 +2,53 @@
 
 <div id="home-container">
     <section id="feed-posts">
-            <h4>Posts</h4>
-            <% if(locals.user){ %>
-            <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
-                <input type="submit" value="Post">
-            </form>
-            <% } %>
+        <h4>Posts</h4>
+        <% if(locals.user){ %>
+        <form action="/posts/create" id="new-post-form" method="POST">
+            <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <% } %>
+    
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts){ %>
+                    
+                <%- include('_post') -%>
+                    
+                <%} %>
+            </ul>
+        </div>
+    </section>
         
-            <div id="posts-list-container">
-                <ul>
-                    <% for(post of posts){ %>
-                        
-                    <%- include('_post') -%>
-                        
-                    <%} %>
-                </ul>
-            </div>
-        </section>
         
-        
-        <section id="user-friends">
+    <section id="user-friends">
+        <h4>Users</h4>
+        <% for(u of all_users){%>
+            <p>
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+            </p>
+        <% } %>
+    </section>
+
+    <% if(locals.user) { %> 
+        <section>
             <h4>Friends</h4>
-            <% for(u of all_users){%>
-                <p>
-                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                </p>
+            <% for(f of all_friends){ %>
+                <% if(f.from_user.name == user.name) { %> 
+                    <p>
+                        <a href="/users/profile/<%= f.to_user.id %>"><%= f.to_user.name %>  </a>
+                    </p>
+                <%} else { %> 
+                    <p>
+                        <a href="/users/profile/<%= f.from_user.id %>"><%= f.from_user.name %>  </a>
+                    </p>
+                <% } %>
+
             <% } %>
         </section>
+    <% } %>
+
 </div>
 
 <!-- importing this script for creating the comments -->

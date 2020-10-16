@@ -18,10 +18,45 @@
         <input type="submit" value="update">
     </form>
 
+    <div>
+        Friend Requests : 
+
+        <ul>
+            <% for(request of requests) { %> 
+                
+                <li>
+                    <%=request.from_user.name%> sent you friend request
+                    <a href="/friends/accept-request/<%=request._id%>">ok</a>
+                    <a href="/friends/decline-request/<%=request._id%>">X</a>
+                </li>
+                
+            <% } %>
+        </ul>
+
+</div>
+
 <% } else { %> 
 
     <!-- else show profile info -->
     <p> <%= profile_user.name %> </p>
     <p> <%= profile_user.email %> </p>
 
+    <% if (locals.user){ %>
+        <a class="friend-button" href="/friends/togglefriend/?sender=<%=user._id%>&receiver=<%=profile_user._id%>">
+               Add Friend
+        </a>
+
+
+    <% } %>
+
 <% } %>
+
+<!-- CHANGE :: import the script file for toggle friends, also run it over for the already users on the page -->
+<script src="/js/friend_button.js"></script>
+<script>
+    $('.friend-button').each(function(){
+        let self = this;
+        let toggleFriend = new ToggleFriend(self);
+    });
+</script>
+

@@ -20,13 +20,6 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-
-    friendships: [
-        { 
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Friendship' 
-        }
-    ],
     
     avatar : {
         type : String

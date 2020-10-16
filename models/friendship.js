@@ -12,6 +12,11 @@ const friendshipSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    status: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
 },{
     timestamps: true
 });

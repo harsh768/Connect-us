@@ -1,20 +1,29 @@
 const User = require('../models/user');
+const Friendship = require('../models/friendship');
 
 //for deleting avatar
 const fs = require('fs');
 const path = require('path'); 
 
 //Keep it same no need to add async await
-module.exports.profile = function(req,res)
+module.exports.profile = async function(req,res)
 {
-    User.findById(req.params.id,function(err,user){
-        
-        req.flash('success' , 'User Profile Page');
-        return res.render('user_profile',{
-            title : "Codeial | Profile",
-            profile_user : user
-        });
-    })
+    let user = await User.findById(req.params.id)
+    let requests = await Friendship.find({$or: [
+        {
+            to_user : req.params.id,
+            status : false
+            
+        }
+    ]}).populate('from_user');
+
+    req.flash('success' , 'User Profile Page');
+    return res.render('user_profile',{
+        title : "Codeial | Profile",
+        profile_user : user,
+        requests : requests
+    });
+    
 }
 
 module.exports.update = async function(req,res)
@@ -88,11 +97,14 @@ module.exports.signup = function(req,res){
 }
 
 //rendering the signin page
-module.exports.signin = function(req,res){   
+module.exports.signin = async function(req,res){   
+    let friends = await Friendship.find({});
+    console.log('**********friends : ',friends);
+
     
     if(req.isAuthenticated())
     {
-        console.log(req.flash , req.user) ;
+        // console.log(req.flash , req.user) ;
         return res.redirect(`/users/profile/${req.user.id}`);
     }
 

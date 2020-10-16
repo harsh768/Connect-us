@@ -1,12 +1,15 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 const Like = require('../models/like');
+const Friendship = require('../models/friendship');
 
 //using async await
 module.exports.home = async function(req,res){
-
+    console.log('Home Controller!!!');
     try{
         //Change :: populate the likes of each post and comment
+      
+
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user')
@@ -20,15 +23,33 @@ module.exports.home = async function(req,res){
             }
         }).populate('likes');
 
-        console.log('################### all posts ',posts);
+        // console.log('################### all posts ',posts);
     
         let users = await User.find({});
+        let friends = [];
+
+        if(req.isAuthenticated())
+        {
+            friends = await Friendship.find({$or: [
+                {
+                    from_user : req.user.id,
+                    status : true
+                    
+                },{
+                    to_user : req.user.id,
+                    status : true
+                }
+            ]}).populate('from_user').populate('to_user');
+        }
+
+        console.log('**********friends : ',friends);
 
         req.flash('success' , 'Home Page');
         return res.render('home',{
             title : "Codeial | Home",
             posts : posts,
-            all_users : users
+            all_users : users,
+            all_friends : friends
         });
         
     }catch(err){
@@ -38,36 +59,7 @@ module.exports.home = async function(req,res){
     
 }
 
-//using normal callback functions
-module.exports.home = function(req,res){     // giving a name to the controller for '/' as home as module.exports is an object 
-    // console.log(req.cookies);
-    // res.cookie('user_id',25);
 
-    //Populating the user of each post
-    Post.find({})
-    .populate('user')
-    .populate({
-        path : 'comments', 
-        populate : {
-            path : 'user'
-        }
-    })
-    .exec(function(err,posts)
-    {
-        User.find({},function(err,users)
-        {
-            if(err) {console.log('error rendering posts',err); return; }
-            return res.render('home',{
-                title : "Codeial | Home",
-                posts : posts,
-                all_users : users
-            });
-        })
-
-    })
-
-
-}
 
 //format = module.exports.address_name = function(req,res){}
 
