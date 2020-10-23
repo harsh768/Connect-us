@@ -1,8 +1,10 @@
 //require library
 const mongoose = require('mongoose');
 
+const env = require('./environment');
+
 //connect to database
-mongoose.connect('mongodb://localhost/codeial', {useNewUrlParser: true});
+mongoose.connect(`mongodb://localhost/${env.db}`, {useNewUrlParser: true});
 
 //acquire the connection to check if running
 const db = mongoose.connection;

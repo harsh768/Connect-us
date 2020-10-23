@@ -1,0 +1,1 @@
+class ToggleFriend{constructor(e){this.toggler=e,this.ToggleFriend()}ToggleFriend(){$(this.toggler).click((function(e){e.preventDefault();let t=this;$.ajax({type:"POST",url:$(t).attr("href")}).done((function(e){1==e.data.removed?$(t).html("Add Friend"):$(t).html("Remove Friend")})).fail((function(e){console.log("error in completing the request",errDa)}))}))}}
