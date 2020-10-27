@@ -5,10 +5,6 @@
   "css/home.css": "css/home-e38a9619e4.css",
   "css/layout.css": "css/layout-03f1a59d5e.css",
   "css/user_profile.css": "css/user_profile-d0f61e0b80.css",
-  "js/chat_engine.js": "js/chat_engine-62f1612710.js",
-  "js/friend_button.js": "js/friend_button-7b39d49972.js",
-  "js/home.js": "js/home-d41d8cd98f.js",
-  "js/home_comment.js": "js/home_comment-bb6531bb93.js",
-  "js/home_post.js": "js/home_post-2962c571f8.js",
-  "js/toggle_likes.js": "js/toggle_likes-6888e2eea1.js"
+  "image/avatar1.jpg": "image/avatar1-85f8a2f996.jpg",
+  "image/phone2.jpg": "image/phone2-12fbe7a219.jpg"
 }

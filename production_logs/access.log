@@ -68,3 +68,24 @@
 ::1 - - [23/Oct/2020:18:43:02 +0000] "GET /css/user_profile.css HTTP/1.1" 404 159 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 ::1 - - [23/Oct/2020:18:43:04 +0000] "POST /friends/togglefriend/?sender=5f93242bca02520134229b83&receiver=5f8d9501e9de85220caa4afd HTTP/1.1" 200 58 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 ::1 - - [23/Oct/2020:18:43:07 +0000] "POST /friends/togglefriend/?sender=5f93242bca02520134229b83&receiver=5f8d9501e9de85220caa4afd HTTP/1.1" 200 58 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+[0mGET / [32m200[0m 35.560 ms - 3148[0m
+[0mGET /favicon.ico [33m404[0m 6.619 ms - 150[0m
+[0mGET /users/sign-in [32m200[0m 7.499 ms - 2286[0m
+[0mGET /users/css/layout.css [33m404[0m 2.314 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 2.502 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 2.439 ms - 159[0m
+[0mGET /users/sign-up [32m200[0m 5.220 ms - 2442[0m
+[0mGET /users/css/layout.css [33m404[0m 2.084 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 1.886 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 1.611 ms - 159[0m
+[0mGET /users/auth/google [36m302[0m 4.145 ms - 0[0m
+[0mGET /users/css/layout.css [33m404[0m 1.798 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 1.651 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 1.474 ms - 159[0m
+[0mPOST /users/create [36m302[0m 21.022 ms - 72[0m
+[0mGET /users/sign-in [32m200[0m 4.913 ms - 2652[0m
+[0mGET /users/css/layout.css [33m404[0m 1.772 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 1.608 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 1.634 ms - 159[0m
+[0mPOST /users/create-session [36m302[0m 5.923 ms - 46[0m
+[0mGET / [32m200[0m 12.670 ms - 4514[0m
