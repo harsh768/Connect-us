@@ -68,3 +68,7 @@
 ::1 - - [23/Oct/2020:18:43:02 +0000] "GET /css/user_profile.css HTTP/1.1" 404 159 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 ::1 - - [23/Oct/2020:18:43:04 +0000] "POST /friends/togglefriend/?sender=5f93242bca02520134229b83&receiver=5f8d9501e9de85220caa4afd HTTP/1.1" 200 58 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 ::1 - - [23/Oct/2020:18:43:07 +0000] "POST /friends/togglefriend/?sender=5f93242bca02520134229b83&receiver=5f8d9501e9de85220caa4afd HTTP/1.1" 200 58 "http://localhost:8000/users/profile/5f8d9501e9de85220caa4afd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::1 - - [24/Oct/2020:07:37:16 +0000] "GET / HTTP/1.1" 200 10268 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::1 - - [24/Oct/2020:07:37:17 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::ffff:192.168.8.105 - - [24/Oct/2020:12:30:12 +0000] "GET / HTTP/1.1" 200 10268 "-" "avast! Antivirus"
+::ffff:192.168.8.105 - - [24/Oct/2020:12:30:12 +0000] "GET / HTTP/1.1" 200 10268 "-" "avast! Antivirus"
