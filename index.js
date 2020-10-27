@@ -49,7 +49,7 @@ if(env.name == "development")
 
 
 //Middlewares
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended : false}));
 
 app.use(cookieParser());
 
