@@ -72,3 +72,6 @@
 ::1 - - [24/Oct/2020:07:37:17 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 ::ffff:192.168.8.105 - - [24/Oct/2020:12:30:12 +0000] "GET / HTTP/1.1" 200 10268 "-" "avast! Antivirus"
 ::ffff:192.168.8.105 - - [24/Oct/2020:12:30:12 +0000] "GET / HTTP/1.1" 200 10268 "-" "avast! Antivirus"
+::1 - - [28/Oct/2020:05:36:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::1 - - [28/Oct/2020:05:36:57 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::1 - - [28/Oct/2020:05:37:01 +0000] "GET /users/sign-in HTTP/1.1" 200 2427 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
