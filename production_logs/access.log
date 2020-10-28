@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0mGET / [32m200[0m 7.509 ms - 3266[0m
 [0mGET / [32m200[0m 5.737 ms - 3266[0m
 [0mGET / [32m200[0m 5.623 ms - 3266[0m
@@ -106,3 +107,5 @@
 [0mGET /users/css/footer.css [33m404[0m 1.701 ms - 159[0m
 [0mGET /public/assets/css/footer.css [33m404[0m 1.544 ms - 167[0m
 [0mGET /assets/css/footer.css [33m404[0m 2.056 ms - 160[0m
+=======
+>>>>>>> 2f50e66228b563d770fb1c1e25b4f770ed123e28
